@@ -1,0 +1,33 @@
+// Create a student object with name, age, and marks
+const student = {
+    name: "John Doe",
+    age: 18,
+    marks: {
+        Math: 85,
+        Science: 92,
+        English: 78,
+        History: 88
+    }
+};
+
+// Function to get the highest marks subject
+function getHighestMark(marks) {
+    let highestSubject = "";
+    let highestMark = 0;
+
+    for (let subject in marks) {
+        if (marks[subject] > highestMark) {
+            highestMark = marks[subject];
+            highestSubject = subject;
+        }
+    }
+    return { highestSubject, highestMark };
+}
+
+// Get the highest mark
+const highest = getHighestMark(student.marks);
+
+// Print the student's name and highest subject marks to the console
+console.log(`Student Name: ${student.name}`);
+console.log(`Highest Subject: ${highest.highestSubject}`);
+console.log(`Highest Marks: ${highest.highestMark}`);
