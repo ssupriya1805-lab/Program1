@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Array Operations using Push and Pop</title>
+    <title>Array Operations in JavaScript</title>
 </head>
 <body>
 
-<h1>Array Operations (Simulated with Push and Pop)</h1>
+<h1>Array Operations (push, pop, shift, unshift)</h1>
 
 <script>
     // Step 1: Create an initial array of fruits
@@ -23,28 +23,34 @@
     console.log("After pop() - Removed:", poppedFruit);
     console.log("Fruits array after pop:", fruits); // Log after pop
 
-    // Step 4: Simulate unshift() (Add element at the beginning using push/pop)
-    // To simulate unshift, we need to remove an element from the end first and then add it back.
-    // Remove last element (simulating the empty space at the front)
-    let lastFruit = fruits.pop(); // "Orange" is the last element
-    fruits.push(lastFruit); // Now the last element becomes the first one
-    fruits.push("Mango"); // Now we push "Mango" to the front
-    console.log("After simulating unshift() - Added 'Mango' at the beginning:", fruits);
+    // Step 4: Add an element to the beginning of the array using unshift()
+    fruits.unshift("Mango");
+    console.log("After unshift() - Added 'Mango' at the beginning:", fruits); // Log after unshift
 
-    // Step 5: Simulate shift() (Remove element from the beginning using push/pop)
-    // Remove first element using pop()
-    let firstFruit = fruits.pop(); // "Mango" will be removed
-    console.log("After simulating shift() - Removed first element:", firstFruit);
-    console.log("Fruits array after simulating shift:", fruits); // Log after simulating shift
+    // Step 5: Remove an element from the beginning of the array using shift()
+    let shiftedFruit = fruits.shift();
+    console.log("After shift() - Removed:", shiftedFruit);
+    console.log("Fruits array after shift:", fruits); // Log after shift
 
-    // Step 6: Simulate another operation to show push/pop again
-    fruits.push("Peach"); // Adding "Peach" to the end
-    console.log("After push() - Added 'Peach':", fruits); // Log after push
+    // Step 6: Add more fruits to the array using push()
+    fruits.push("Peach", "Pineapple");
+    console.log("After push() - Added 'Peach' and 'Pineapple':", fruits); // Log after push
 
-    // Step 7: Remove the last element using pop()
-    let removedPeach = fruits.pop();
-    console.log("After pop() - Removed 'Peach':", removedPeach); // Log after pop
+    // Step 7: Remove the last fruit using pop()
+    let removedFruit = fruits.pop();
+    console.log("After pop() - Removed:", removedFruit);
+    console.log("Fruits array after pop:", fruits); // Log after pop
 
+    // Step 8: Add a fruit to the beginning again using unshift()
+    fruits.unshift("Strawberry");
+    console.log("After unshift() - Added 'Strawberry' at the beginning:", fruits); // Log after unshift
+
+    // Step 9: Remove the first fruit using shift()
+    let removedFirstFruit = fruits.shift();
+    console.log("After shift() - Removed first element:", removedFirstFruit);
+    console.log("Fruits array after shift:", fruits); // Log after shift
+
+    // Final log of the fruits array
     console.log("Final fruits array:", fruits);
 </script>
 
